@@ -1,4 +1,5 @@
 # Frontend Mentor - QR code component
+LIVE DEMO: https://icm213.github.io/qrCodeComponent/
 
 ![Design preview for the QR code component coding challenge](./design/desktop-preview.jpg)
 
