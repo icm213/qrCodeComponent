@@ -1,0 +1,82 @@
+// @font-face {
+//     font-family: Outfit;
+//     src: url(https://fonts.google.com/specimen/Outfit)
+// }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 15px;
+    font-family: Outfit, sans-serif;
+}
+
+$White: hsl(0, 0%, 100%);
+$LightGray: hsl(212, 45%, 89%);
+$GrayishBlue: hsl(220, 15%, 55%);
+$DarkBlue: hsl(218, 44%, 22%);
+
+@mixin flexBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    @include flexBox;
+    max-width: 100%;
+    // width: calc(100vw - 10px);
+    width: 100vw;
+    height: 100vh;
+    background-color: $LightGray;
+}
+.qr--element {
+    @include flexBox;
+    max-width: 20rem;
+    flex-direction: column;
+    background-color: $White;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 0 5px $GrayishBlue;
+    -webkit-box-shadow: inset 0 0 5px $GrayishBlue;
+    .qr--element__image {
+        @include flexBox;
+        margin: 1rem;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+    }
+    h1 {
+        color: $DarkBlue;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    h2 {
+        color: $GrayishBlue;
+        padding: 1rem;
+        font-weight: 400;
+    }
+    footer {
+        padding: 1rem;
+        p {
+            font-size: 10px;
+            color: $GrayishBlue;
+        }
+        a {
+            @extend p;
+            color: $DarkBlue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .qr--element {
+        max-width: 22rem;
+    }
+}
